@@ -110,6 +110,8 @@ Write-Host "Press '2' for EMEA Region"
 Write-Host "Press '3' for EMEA Region with COLO"
 Write-Host "Press '4' for APAC"
 Write-Host "Press '5' for AMER-TST"
+Write-Host "Press '6' for EMEA-TST"
+Write-Host "Press '7' for APAC-TST"
 
 $input = Read-Host "Please select the region"
 switch ($input)
@@ -129,7 +131,12 @@ switch ($input)
     '5'{
         $Tag = "AMER-TST"
     }
-
+    '6'{
+        $Tag = "EMEA-TST"
+    }
+    '7'{
+        $Tag = "APAC-TST"
+    }
 }
     $serial = (get-wmiobject -class win32_bios).SerialNumber
     $Device = get-autopilotdevice -serial $serial
